@@ -1,5 +1,3 @@
-import Axios from "axios";
-
 const state = {
     user: null
 }
@@ -14,11 +12,11 @@ const mutations = {
 
 const actions = {
     async register(context, data) {
-        const response = await Axios.post('/api/register', data)
+        const response = await axios.post('/api/register', data)
         context.commit('setUser', response.data)
     },
     async login(context, data) {
-        const response = await Axios.post('/api/login', data)
+        const response = await axios.post('/api/login', data)
         context.commit('setUser', response.data)
     },
     async logout(context) {
