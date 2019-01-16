@@ -51,8 +51,12 @@
             }
         },
         methods: {
-            login () {
-                console.log(this.loginForm)
+            async login () {
+                // authストアのloginアクションを呼び出す
+                await this.$store.dispatch('auth/login', this.loginForm)
+
+                // トップページに遷移する
+                this.$router.push('/')
             },
             async register () {
                 // authストアのregisterアクションを呼び出す
