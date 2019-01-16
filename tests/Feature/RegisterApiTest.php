@@ -14,6 +14,7 @@ class RegisterApiTest extends TestCase
     /**
      * @test
      */
+
     public function should_新しいユーザーを作成して返却する()
     {
         $data = [
