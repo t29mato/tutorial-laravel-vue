@@ -3,7 +3,7 @@
         <RouterLink class="navbar__brand" to="/">
             MorayEel
         </RouterLink>
-        <div class="navbar_menu">
+        <div class="navbar__menu">
             <div class="navbar__item">
                 <button class="button">
                     <i class="icon ion-md-add"></i>

@@ -141,6 +141,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -715,7 +716,7 @@ var render = function() {
         _vm._v("\n        MorayEel\n    ")
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "navbar_menu" }, [
+      _c("div", { staticClass: "navbar__menu" }, [
         _vm._m(0),
         _vm._v(" "),
         _c("span", { staticClass: "navbar__item" }, [
@@ -779,6 +780,7 @@ var render = function() {
         "li",
         {
           staticClass: "tab__item",
+          class: { "tab__item--active": _vm.tab === 1 },
           on: {
             click: function($event) {
               _vm.tab = 1
@@ -792,6 +794,7 @@ var render = function() {
         "li",
         {
           staticClass: "tab__item",
+          class: { "tab__item--active": _vm.tab === 2 },
           on: {
             click: function($event) {
               _vm.tab = 2
@@ -801,7 +804,38 @@ var render = function() {
         [_vm._v("Register")]
       )
     ]),
-    _vm._v("\n    " + _vm._s(_vm.tab) + "\n")
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm.tab === 1,
+            expression: "tab === 1"
+          }
+        ],
+        staticClass: "panel"
+      },
+      [_vm._v("Login Form")]
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm.tab === 2,
+            expression: "tab === 2"
+          }
+        ],
+        staticClass: "panel"
+      },
+      [_vm._v("Register Form")]
+    )
   ])
 }
 var staticRenderFns = []
