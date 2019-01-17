@@ -35,7 +35,7 @@
 
 <script>
     export default {
-        data () {
+        data() {
             return {
                 tab: 1,
                 loginForm: {
@@ -51,20 +51,27 @@
             }
         },
         methods: {
-            async login () {
+            async login() {
                 // authストアのloginアクションを呼び出す
                 await this.$store.dispatch('auth/login', this.loginForm)
 
-                // トップページに遷移する
-                this.$router.push('/')
+                if (this.apiStatus) {
+                    // トップページに移動する
+                    this.$router.push('/')
+                }
             },
-            async register () {
+            async register() {
                 // authストアのregisterアクションを呼び出す
                 await this.$store.dispatch('auth/register', this.registerForm)
 
                 // トップページに移動する
                 this.$router.push('/')
             }
-        }
+        },
+        computed: {
+            apiStatus() {
+                return this.$store.state.auth.apiStatus
+            }
+        },
     }
 </script>
